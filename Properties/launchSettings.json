@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ExtractorRunner": {
+      "commandName": "Project",
+      "commandLineArgs": "--directory \"D:/Data/clients/RodPaddock/CCExtractor/\" --extension .mpg"
+    }
+  }
+}
