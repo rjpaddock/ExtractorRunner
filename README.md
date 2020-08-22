@@ -3,7 +3,8 @@ Welcome to the extractor runner. THis is a command line utility that you can use
 
 https://www.ccextractor.org/
 
-This project contains the C# and Python code documented my series of blog posts at https://www.rodpaddock.com
+This project contains the C# and Python code documented in 
+my series of blog posts at https://www.rodpaddock.com
 
 Links to the article are here:
 
