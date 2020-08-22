@@ -1,4 +1,5 @@
 import os
+import platform
 import subprocess
 import argparse
 
@@ -8,7 +9,14 @@ parser.add_argument("--directory", help="Directory to process", default='.')
 args = parser.parse_args()
 
 # should be added to the system PATH statement
-extractor_name = 'ccextractorwin' 
+extractorname = ''
+if platform.system() == 'Windows':
+  extractor_name = 'ccextractorwin' 
+elif platform.system() == 'Darwin':
+  extractor_name = 'ccextractor'
+elif platform.system() == "Linux":
+  extractor_name = 'ccextractor'
+  
 for file in os.listdir(args.directory):
   if file.endswith(args.extension):
     print(os.path.join(args.directory, file))
