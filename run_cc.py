@@ -15,8 +15,8 @@ if platform.system() == 'Windows':
 elif platform.system() == 'Darwin':
   extractor_name = 'ccextractor'
 elif platform.system() == "Linux":
-  extractor_name = 'ccextractor'
-  
+  extractor_name = '/home/azureuser/data/projects/ccextractor/linux/ccextractor'
+
 for file in os.listdir(args.directory):
   if file.endswith(args.extension):
     print(os.path.join(args.directory, file))
