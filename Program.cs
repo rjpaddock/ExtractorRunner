@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 using CommandLine;
 
 namespace ExtractorRunner
@@ -13,7 +14,21 @@ namespace ExtractorRunner
 			var parsed = Parser.Default.ParseArguments<Options>(args);
 			var options = ((Parsed<Options>) parsed).Value;
 			
-			var extractor_exe_path = "ccextractorwin";
+			var extractor_exe_path = "";
+			if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+				extractor_exe_path = "ccextractorwin";
+			}
+			else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+			{
+				extractor_exe_path = "ccextractor";
+			}
+			else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+			{
+				extractor_exe_path = "ccextractor";
+			}
+
+
 			foreach (var fileName in Directory.GetFiles(options.Directory,$"*{options.Extension}"))
 			{
 				Console.WriteLine(fileName);
