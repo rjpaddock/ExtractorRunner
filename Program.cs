@@ -25,7 +25,7 @@ namespace ExtractorRunner
 			}
 			else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
 			{
-				extractor_exe_path = "./home/azureuser/data/projects/ccextractor/linux/ccextractor";
+				extractor_exe_path = "/home/azureuser/data/projects/ccextractor/linux/ccextractor";
 			}
 
 
